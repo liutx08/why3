@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        async function generateMolecules() {
+            let inputData = document.getElementById("input-data").value.trim();
+            let numSamples = document.getElementById("num-samples").value;
+            let batchSize = document.getElementById("batch-size").value;
+            let resultBox = document.getElementById("result");
+
+            if (!inputData) {
+                resultBox.innerText = "⚠️ Please enter valid input data.";
+                return;
+            }
+
+            resultBox.innerHTML = "<p class='loading'>⏳ Generating molecules...</p>";
+
+            try {
+                let response = await fetch("/molecule", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        "input_data": inputData,
+                        "num_samples": numSamples,
+                        "batch_size": batchSize
+                    })
+                });
+
+                let result = await response.json();
+
+                if (response.ok) {
+                    let outputHTML = "<h3>Generated Molecules</h3><ul class='molecule-list'>";
+                    result.molecules.forEach(mol => {
+                        outputHTML += `<li><strong>SMILES:</strong> ${mol.smi} | <strong>Fragments:</strong> ${mol.frags} | <strong>Index:</strong> ${mol.ind}</li>`;
+                    });
+                    outputHTML += "</ul>";
+                    resultBox.innerHTML = outputHTML;
+                } else {
+                    resultBox.innerHTML = "<p class='error'>❌ Error: " + result.error + "</p>";
+                }
+            } catch (error) {
+                resultBox.innerHTML = "<p class='error'>❌ Server error. Please try again later.</p>";
+                console.error("Fetch error:", error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Molecular Generator</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/molecule">Molecular Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="feature">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Molecular Generator</h2>
+                    <p>Enter molecular data to generate molecules:</p>
+                    <input type="text" id="input-data" placeholder="Enter PDB ID or file path" class="input-box">
+                    <label for="num-samples">Number of Samples:</label>
+                    <input type="number" id="num-samples" value="16" class="input-box">
+                    <label for="batch-size">Batch Size:</label>
+                    <input type="number" id="batch-size" value="8" class="input-box">
+                    <button class="cta-button" onclick="generateMolecules()">Generate</button>
+                </div>
+                <div class="feature-image">
+                    <img src="{{ url_for('static', filename='images/molecular_model.png') }}" alt="Molecular Model">
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MoleSmart Pharma. All rights reserved.</p>
+    </footer>
+</body>
+</html>

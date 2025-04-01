@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #001F3F;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+background: rgba(35, 20, 60, 0.85); /* 深紫蓝 */
+    padding: 10px 0;
+    border-radius: 8px; /* 增加圆角 */
+}
+
+nav ul {
+        display: flex;
+    justify-content: center; /* 让菜单水平居中 */
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px; /* 增加间距，使元素不会太紧 */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;  /* 增大字体 */
+    letter-spacing: 1px; /* 增加字间距 */
+}
+
+nav ul li a:hover {
+    color: #ffcc00;  /* 悬停时变色 */
+    text-decoration: underline; /* 增加下划线 */
+    transition: color 0.3s ease-in-out;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro {
+    background: linear-gradient(to right, #f5f7fa, #e1eaf4); /* 渐变背景 */
+    padding: 10px 3%;
+    text-align: center;  /* 让介绍部分居中 */
+}
+
+.intro-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.intro-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.intro-image img {
+    width: 100%;
+    max-width: 1200px; /* 图片更宽 */
+    border-radius: 15px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+}
+
+.feature {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.feature-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    width: 50%;
+    padding: 20px;
+        letter-spacing: 1px;  /* 调整字间距 */
+    line-height: 1.6;     /* 调整行间距 */
+}
+
+.feature-image {
+    width: 40%;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #001F3F;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.input-box {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.molecule-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.molecule-list li {
+    background: #eef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.loading {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}

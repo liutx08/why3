@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Covalent Drug</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        async function sendData() {
+            let userInput = document.getElementById("user-input").value.trim();
+            let resultBox = document.getElementById("result");
+
+            if (!userInput) {
+                resultBox.innerText = "⚠️ Please enter valid molecular data.";
+                return;
+            }
+
+            resultBox.innerText = "⏳ Processing your request...";
+
+            try {
+                let response = await fetch("/predict", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ "user_input": userInput })
+                });
+
+                let result = await response.json();
+
+                if (response.ok) {
+                    resultBox.innerText = "✅ Prediction: " + JSON.stringify(result, null, 2);
+                } else {
+                    resultBox.innerText = "❌ Error: " + result.error;
+                }
+            } catch (error) {
+                resultBox.innerText = "❌ Server error. Please try again later.";
+                console.error("Fetch error:", error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Covalent Drug Prediction</h2>
+    <p>Enter molecular data to predict binding potential:</p>
+    <input type="text" id="user-input" placeholder="Enter input data">
+    <button onclick="sendData()">Predict</button>
+    <p id="result"></p>
+</body>
+</html>

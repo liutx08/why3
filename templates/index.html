@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摩尔智药 - MoleSmart Pharma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>摩尔智药</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">>Targeted Drug Design</a></li>
+                <li><a href="#">>Drug Response</a></li>
+                <li><a href="#">>Covalent Drug Design</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+    <div class="intro-content">
+        <div class="intro-text">
+            <h2>摩尔智药 - MoleSmart Pharma</h2>
+                    <p>MoleSmart Pharma aims to leverage artificial intelligence technologies to advance the development and commercialization of small-molecule drugs. By applying AI algorithms and data analytics, we seek to accelerate drug discovery and enhance its success rate, thereby improving investment returns in the pharmaceutical industry. MoleSmart Pharma integrates AI technologies, including machine learning, deep learning, big data analytics, and natural language processing, into key stages of drug development, such as target identification, molecular design, and compound screening. Through comprehensive analysis and mining of both structured and unstructured data, we efficiently generate targeted drug candidates and identify promising compounds.</p>
+        </div>
+    </div>
+    <div class="intro-image">
+        <img src="{{ url_for('static', filename='images/sample.png') }}" alt="overall">
+    </div>
+</section>
+
+
+        <!-- Targeted Drug Design Section -->
+        <section class="feature">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Targeted Drug Design</h2>
+                    <p>
+Targeted drug design develops molecules that interact with biological targets like proteins or enzymes for therapeutic effects. To overcome challenges like low synthetic accessibility, we created a fragment-based ligand design algorithm. This approach integrates active fragment generation and molecular reconstruction, using ordered fragmentation and reconstruction to train sequence-to-sequence and language models. Our model incorporates target contribution perception and a Bag-of-Words classifier, enhancing protein binding site awareness and interpretability. Pretrained on large-scale datasets, it excels in binding affinity, drug-likeness, and synthetic accessibility. A simulated annealing algorithm fine-tunes molecular properties, improving efficiency and reducing drug development costs.                    </p>
+                    <button class="cta-button" onclick="location.href='/molecule'">Get Started</button>
+                </div>
+                <div class="feature-image">
+                    <img src="{{ url_for('static', filename='images/target_prediction.png') }}" alt="Target Prediction">
+                </div>
+            </div>
+        </section>
+
+        <!-- Drug Response Prediction Section -->
+        <section class="feature">
+            <div class="feature-content reverse">
+                <div class="feature-image">
+                    <img src="{{ url_for('static', filename='images/bioactivity_prediction.png') }}" alt="Bioactivity Prediction">
+                </div>
+                <div class="feature-text">
+                    <h2>Drug Response</h2>
+                    <p>
+Drug response prediction is key to personalized medicine, identifying cell reactions to treatments. To improve accuracy, we propose a gene expression-based model using self-supervised learning to integrate gene expression data, gene interaction networks, and molecular structures. This enhances drug sensitivity predictions and supports clinical applications, advancing personalized treatment strategies.                    </p>
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Covalent Drug Design Section -->
+        <section class="feature">
+            <div class="feature-content reverse">
+                <div class="feature-image">
+                    <img src="{{ url_for('static', filename='images/covalent_drug_design.png') }}" alt="Covalent Drug Design">
+                </div>
+                <div class="feature-text">
+                    <h2>Covalent Drug Design</h2>
+                    <p>
+Covalent drug design develops irreversible inhibitors that form strong bonds with target proteins. CovaGEN, a deep generative method using a reinforced latent diffusion model, designs drug molecules with high binding affinity, drug-likeness, safety, and covalent binding ability. Pre-trained on millions of drug-like molecules, it ensures chemical validity and synthetic accessibility. It integrates protein sequence encoding for target affinity and a covalent warhead-guided mechanism for binding. Reinforcement learning optimizes safety, reducing toxicity by 12% while improving drug-likeness by 31% and synthetic accessibility by 7%. For EGFR T790M and SARS-CoV-2 Mpro, over half of the designed inhibitors show strong binding potential, highlighting CovaGEN’s value.                    </p>
+                    <button class="cta-button" >Get Started</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 摩尔智药 - MoleSmart Pharma. All rights reserved.</p>
+    </footer>
+</body>
+</html>
