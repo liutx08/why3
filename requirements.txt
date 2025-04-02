@@ -15,7 +15,7 @@ xgboost==1.7.4
 # 化学 & 生物信息学
 rdkit==2023.03.1
 biopython==1.81
-openbabel==3.1.1
+openbabel==3.1.1.1
 
 # 配置和数据处理
 easydict==1.9
