@@ -1,0 +1,38 @@
+
+# 深度学习
+torch==1.12.1
+botorch==0.8.5
+gpytorch==1.10
+gunicorn
+flask
+# 计算工具
+numpy==1.24.3
+scikit-learn==1.2.2
+matplotlib==3.7.1
+pandas==2.0.2
+tpot==0.12.1
+xgboost==1.7.4
+
+# 化学 & 生物信息学
+rdkit==2023.03.1
+biopython==1.81
+openbabel-wheel
+# 配置和数据处理
+easydict==1.9
+orjson==3.9.0
+pyyaml==6.0
+bidict==0.22.1
+
+# 其他工具
+joblib==1.2.0
+wandb==0.15.4
+tqdm==4.65.0
+halo==0.0.31
+pexpect==4.8.0
+psutil==5.9.5
+requests==2.31.0
+
+# Pip 安装的额外依赖
+fair_esm==2.0.0
+meeko==0.4.0
+ormsgpack==1.2.6
