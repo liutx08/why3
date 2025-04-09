@@ -18,8 +18,8 @@ import numpy as np
 from rdkit import Chem
 import selfies as sf
 sys.path.append("../")
-from transvae.trans_models import TransVAE
-from transvae.rnn_models import RNNAttn
+from ..transvae.trans_models import TransVAE
+from ..transvae.rnn_models import RNNAttn
 from scipy.spatial.transform import Rotation
 import esm
 

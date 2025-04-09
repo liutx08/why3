@@ -18,10 +18,10 @@ from .check_benzene import check_toxicity_xgb_2,check_toxicity_xgb_new,check_tox
 from .nn import mean_flat
 from .losses import normal_kl, discretized_gaussian_log_likelihood,gaussian_likelihood_vector,another_gaussian_likelihood_vector
 from.train_util import TrainLoopRL
-from transvae.rnn_models import RNNAttn
+from ..transvae.rnn_models import RNNAttn
 from rdkit import Chem
 from torch_geometric.data import Batch
-import selfies as sf
+# import selfies as sf
 
 
 

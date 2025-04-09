@@ -7,7 +7,7 @@ import torch
 import numpy as np
 import os,sys
 sys.path.append(os.path.dirname(sys.path[0]))
-from transvae.rnn_models import RNNAttn
+from ..transvae.rnn_models import RNNAttn
 import argparse
 from datetime import datetime, date
 

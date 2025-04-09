@@ -8,11 +8,11 @@ import torch
 from torch_geometric.data import Data, Batch
 from tqdm import tqdm
 sys.path.append("../")
-from transvae.trans_models import TransVAE
-from transvae.tvae_util import decode_mols
+from ..transvae.trans_models import TransVAE
+from ..transvae.tvae_util import decode_mols
 from torch.autograd import Variable
 from torch_scatter import scatter_add,scatter_mean
-from transvae.tvae_util import encode_smiles,tokenizer
+from ..transvae.tvae_util import encode_smiles,tokenizer
 
 
 
