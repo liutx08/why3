@@ -4,12 +4,12 @@ Here in this script is the methods to load the process CrossDock dataset. This i
 
 from PIL import Image
 import blobfile as bf
-from mpi4py import MPI
+# from mpi4py import MPI
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
 
-from optdiffusion import crossdock_dataset,esm_dataset
+from ..optdiffusion import crossdock_dataset,esm_dataset
 from torch_geometric.data import DataLoader
 from torch.utils.data import Subset
 

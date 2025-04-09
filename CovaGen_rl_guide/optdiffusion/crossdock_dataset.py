@@ -10,7 +10,7 @@ from torch.utils.data import Dataset
 from torch import utils
 from tqdm.auto import tqdm
 import torch.nn.functional as F
-from optdiffusion.protein_ligand_process import PDBProtein, smiles_to_embed
+from ..optdiffusion.protein_ligand_process import PDBProtein, smiles_to_embed
 from torch_geometric.data import Data
 import numpy as np
 from rdkit import Chem

@@ -12,9 +12,9 @@ import torch as th
 import torch.distributed as dist
 import torch.nn.functional as F
 from datetime import datetime, date
-from guided_diffusion.resample import create_named_schedule_sampler
-from guided_diffusion import dist_util, logger
-from guided_diffusion.script_util import (
+from ..guided_diffusion.resample import create_named_schedule_sampler
+from ..guided_diffusion import dist_util, logger
+from ..guided_diffusion.script_util import (
 	NUM_CLASSES,
 	model_and_diffusion_defaults,
 	classifier_defaults,
@@ -23,10 +23,10 @@ from guided_diffusion.script_util import (
 	add_dict_to_argparser,
 	args_to_dict,
 )
-from guided_diffusion.qed_models import Net, Net2, condtimeNet, reg_Net,reg_Net_newt,deeper_cls_net
-from optdiffusion.model import Dynamics_samp, Dynamics_t_samp, Dynamics_t_samp2, Dynamics_t,simple_reg_Net_newt,Dynamics_t_esm_deeper
-from guided_diffusion.pl_datasets import load_data_smi,load_data_esm
-from guided_diffusion.train_util import TrainLoopRL
+from ..guided_diffusion.qed_models import Net, Net2, condtimeNet, reg_Net,reg_Net_newt,deeper_cls_net
+from ..optdiffusion.model import Dynamics_samp, Dynamics_t_samp, Dynamics_t_samp2, Dynamics_t,simple_reg_Net_newt,Dynamics_t_esm_deeper
+from ..guided_diffusion.pl_datasets import load_data_smi,load_data_esm
+from ..guided_diffusion.train_util import TrainLoopRL
 
 
 

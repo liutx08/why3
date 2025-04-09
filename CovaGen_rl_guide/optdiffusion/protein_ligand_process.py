@@ -15,8 +15,6 @@ from torch_scatter import scatter_add,scatter_mean
 from ..transvae.tvae_util import encode_smiles,tokenizer
 
 
-
-
 class PDBProtein(object):
     AA_NAME_SYM = {
         'ALA': 'A', 'CYS': 'C', 'ASP': 'D', 'GLU': 'E', 'PHE': 'F', 'GLY': 'G', 'HIS': 'H',

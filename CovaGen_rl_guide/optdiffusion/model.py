@@ -8,11 +8,11 @@ import json
 sys.path.append(os.path.dirname(sys.path[0]))
 from torch import nn
 # from optdiffusion.EGNNEncoder_pyg import EGNNEncoder
-from optdiffusion.MultiHeadAttentionLayer import MultiHeadAttentionLayer
+from ..optdiffusion.MultiHeadAttentionLayer import MultiHeadAttentionLayer
 import numpy as np
 from torch import utils
 from torch_geometric.utils import to_dense_batch
-from dgg.models.encoders.schnet import SchNetEncoder
+from ..dgg.models.encoders.schnet import SchNetEncoder
 
 
 

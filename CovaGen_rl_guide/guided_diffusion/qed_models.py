@@ -3,11 +3,11 @@ import numpy as np
 from torch import nn#
 import math
 # from optdiffusion.EGNNEncoder_pyg import EGNNEncoder
-from optdiffusion.MultiHeadAttentionLayer import MultiHeadAttentionLayer
+from ..optdiffusion.MultiHeadAttentionLayer import MultiHeadAttentionLayer
 import numpy as np
 from torch import utils
 from torch_geometric.utils import to_dense_batch#
-from dgg.models.encoders.schnet import SchNetEncoder
+from ..dgg.models.encoders.schnet import SchNetEncoder
 
 def TimestepEmbedding(timesteps, dim, max_period=10000):
 

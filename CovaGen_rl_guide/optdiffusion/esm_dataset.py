@@ -12,11 +12,11 @@ from torch import utils
 from tqdm.auto import tqdm
 import time
 import torch.nn.functional as F
-from optdiffusion.protein_ligand_process import PDBProtein, smiles_to_embed
+from ..optdiffusion.protein_ligand_process import PDBProtein, smiles_to_embed
 from torch_geometric.data import Data
 import numpy as np
 from rdkit import Chem
-import selfies as sf
+# import selfies as sf
 sys.path.append("../")
 from ..transvae.trans_models import TransVAE
 from ..transvae.rnn_models import RNNAttn
