@@ -8,9 +8,9 @@ import torch.nn.functional as F
 import math, copy, time
 from torch.autograd import Variable
 
-from transvae.tvae_util import *
-from transvae.opt import NoamOpt, AdamOpt
-from transvae.trans_models import VAEShell, Generator, ConvBottleneck, DeconvBottleneck, PropertyPredictor, Embeddings, LayerNorm
+from ..transvae.tvae_util import *
+from ..transvae.opt import NoamOpt, AdamOpt
+from ..transvae.trans_models import VAEShell, Generator, ConvBottleneck, DeconvBottleneck, PropertyPredictor, Embeddings, LayerNorm
 
 # https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
 # Attention architectures inspired by the ^^^ implementation

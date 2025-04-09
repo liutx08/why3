@@ -8,7 +8,7 @@ import torch
 import numpy as np
 import xgboost as xgb
 from sklearn.preprocessing import MinMaxScaler
-import selfies as sf
+# import selfies as sf
 
 def check_toxicity_xgb(smi_list):
 	with open('./Models/xgboost_model_maccs.pkl', "rb") as model_file:

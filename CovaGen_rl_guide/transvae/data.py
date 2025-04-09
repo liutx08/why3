@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import math, copy, time
 from torch.autograd import Variable
 
-from transvae.tvae_util import *
+from ..transvae.tvae_util import *
 
 def vae_data_gen(mols, props, char_dict):
     """

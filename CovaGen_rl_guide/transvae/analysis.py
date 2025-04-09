@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from transvae.tvae_util import KLAnnealer
+from ..transvae.tvae_util import KLAnnealer
 
 # Plotting functions
 

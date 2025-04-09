@@ -1,9 +1,10 @@
 import copy
 import functools
-import os
+import os,sys
 import xgboost as xgb
 import pickle
-from transvae.rnn_models import RNNAttn
+sys.path.append(os.path.dirname(sys.path[0]))
+from ..transvae.rnn_models import RNNAttn
 from rdkit.Chem import AllChem
 import blobfile as bf
 import torch as th

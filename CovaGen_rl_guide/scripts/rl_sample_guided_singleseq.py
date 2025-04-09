@@ -5,8 +5,6 @@ Sampling latent vectors and save. This is based on classifier_sample.py in the i
 import argparse
 import pickle
 import os, sys
-
-sys.path.append(os.path.dirname(sys.path[0]))
 import numpy as np
 import torch as th
 import torch.distributed as dist
@@ -27,15 +25,13 @@ from guided_diffusion.qed_models import Net, Net2, condtimeNet, reg_Net,reg_Net_
 from optdiffusion.model import Dynamics_samp, Dynamics_t_samp, Dynamics_t_samp2, Dynamics_t,simple_reg_Net_newt,Dynamics_t_esm_deeper
 from guided_diffusion.pl_datasets import load_data_smi,load_data_esm
 from guided_diffusion.train_util import TrainLoopRL
-
+sys.path.append(os.path.dirname(sys.path[0]))
 
 
 def main():
 	args = create_argparser().parse_args()
-
 	dist_util.setup_dist()
 	logger.configure(dir='./logs/')
-
 	logger.log("creating model and diffusion...")
 	_, diffusion = create_model_and_diffusion(
 		**args_to_dict(args, model_and_diffusion_defaults().keys())
@@ -43,9 +39,6 @@ def main():
 	_, prior_diffusion = create_model_and_diffusion(
 		**args_to_dict(args, model_and_diffusion_defaults().keys())
 	)
-
-
-
 	agent_model = Dynamics_t_esm_deeper(condition_dim=28, target_dim=128, hid_dim=64, condition_layer=3, n_heads=2,
 							 condition_time=True, sampling=True)
 	prior_model = Dynamics_t_esm_deeper(condition_dim=28, target_dim=128, hid_dim=64, condition_layer=3, n_heads=2,
@@ -109,12 +102,9 @@ def main():
 	)
 
 	diffusion.insert_rlloop(TLLOOP)
-
-	logger.log("Starting an RL Train...")
 	time_start = datetime.now()
 	cnt=0
 	for batch in dat:
-
 		model_kwargs = {}
 		classes = th.tensor(np.ones((100,), dtype=np.int)).to('cuda:0')
 		model_kwargs["y"] = classes
@@ -138,13 +128,10 @@ def main():
 		with open(args.save_path,"wb")as f:
 			pickle.dump(sample,f) # ##
 		print("Saving generated molecules...")
-
 		cnt+=1
-
 		time_end = datetime.now()
 		dist.barrier()
 		break
-	time_samp = (time_end - time_start).seconds
 
 
 def create_argparser():

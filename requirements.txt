@@ -5,6 +5,8 @@ botorch==0.8.5
 gpytorch==1.10
 gunicorn
 flask
+torchviz
+torch_geometric
 # 计算工具
 numpy==1.24.3
 scikit-learn==1.2.2
@@ -12,11 +14,12 @@ matplotlib==3.7.1
 pandas==2.0.2
 tpot==0.12.1
 xgboost==1.7.4
-
+blobfile
 # 化学 & 生物信息学
 rdkit==2023.03.1
 biopython==1.81
 openbabel-wheel
+
 # 配置和数据处理
 easydict==1.9
 orjson==3.9.0
